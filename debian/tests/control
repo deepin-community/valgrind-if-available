@@ -1,0 +1,3 @@
+Tests: threaded
+Depends: @, gcc, libc-dev
+Restrictions: allow-stderr

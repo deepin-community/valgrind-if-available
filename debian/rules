@@ -1,0 +1,6 @@
+#!/usr/bin/make -f
+%:
+	dh $@
+
+override-dh_auto_test:
+	cd debian/tests && AUTOPKGTEST_TMP=/tmp ./threaded

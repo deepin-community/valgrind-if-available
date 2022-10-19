@@ -1,0 +1,15 @@
+#!/bin/sh
+set -e
+
+if ! which valgrind >/dev/null; then
+    printf '\e[36mNo valgrind, no fail.\e[0m\n'
+    exit 0
+fi
+
+cc -Wall -O3 -g -o "$AUTOPKGTEST_TMP"/⁊ debian/tests/threaded.c -pthread
+
+# ... and helgrind is currently broken, joy!
+for TOOL in memcheck drd helgrind; do
+    printf '\e[36mChecking \e[96m%s\e[0m\n' "$TOOL"
+    valgrind --tool="$TOOL" "$AUTOPKGTEST_TMP"/⁊
+done
