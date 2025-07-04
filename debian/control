@@ -3,7 +3,7 @@ Section: devel
 Priority: optional
 Maintainer: Adam Borowski <kilobyte@angband.pl>
 Build-Depends: debhelper-compat (=13),
- valgrind [amd64 arm64 armhf i386 mips64el ppc64el s390x powerpc ppc64]
+ valgrind [amd64 arm64 armhf i386 ppc64el s390x powerpc ppc64]
 Standards-Version: 4.6.0
 Rules-Requires-Root: no
 Vcs-Git: https://salsa.debian.org/debian/valgrind-if-available.git
@@ -12,7 +12,7 @@ Vcs-Browser: https://salsa.debian.org/debian/valgrind-if-available
 Package: valgrind-if-available
 Architecture: any
 Depends: ${misc:Depends},
- valgrind [amd64 arm64 armhf i386 mips64el ppc64el s390x powerpc ppc64]
+ valgrind [amd64 arm64 armhf i386 ppc64el s390x powerpc ppc64]
 Description: dependency package to pull in Valgrind if it's available
  This metapackage installs Valgrind on architectures where it is available.
  As the list of archs where Valgrind works changes quite often, explicitly
